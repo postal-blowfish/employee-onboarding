@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+.title-cont {
+    display: grid;
+    justify-items: center;
+}
+.title {
+    border: solid 2px green;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.vid-cont {
+    display: grid;
+    border: solid red 2px;
+    justify-items: center;
+}
+.vid-title {
+    background-color: #E29579;
+    border: solid black 2px;
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: .5s;
+}
+.vid-title:hover {
+    background-color: aqua;
+    color:blueviolet;
+    padding: 15px;
+}
