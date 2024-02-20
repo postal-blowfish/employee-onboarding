@@ -23,10 +23,10 @@
     border-radius: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    transition: .5s;
+    transition: .7s;
 }
 .vid-title:hover {
     background-color: aqua;
     color:blueviolet;
-    padding: 15px;
+    border-radius: 0px;
 }
