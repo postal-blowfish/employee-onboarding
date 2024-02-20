@@ -47,4 +47,4 @@ function toggle1() {
     }
 
 
-vidBtn1.addEventListener('click', toggle1());
+vidBtn1.addEventListener('click', toggle1);
