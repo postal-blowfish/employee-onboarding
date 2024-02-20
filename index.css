@@ -5,7 +5,8 @@
 .title-cont {
     display: grid;
     justify-items: center;
-    padding: 15px;
+    padding: 15px; 
+    
 }
 .title {
     border: solid 2px black;
@@ -21,6 +22,9 @@
 .vid-cont {
     display: grid;
     justify-items: center;
+    margin: 7px;
+    border: solid red 1px; 
+    padding: 5px;
 }
 .vid-title {
     background-color: #E29579;
