@@ -23,7 +23,6 @@
     display: grid;
     justify-items: center;
     margin: 7px;
-    border: solid red 1px; 
     padding: 5px;
 }
 .vid-title {
@@ -39,12 +38,14 @@
     color:blueviolet;
     border-radius: 0px;
     box-shadow: 5px 5px #E29579;
+    cursor: pointer;
 }
 
 .vid-box {
     border: solid #E29579 5px;
     border-radius: 5px;
     transition: .7s;
+    display: none;
 }
 .vid-box:hover {
     box-shadow: 7px 7px blueviolet;
