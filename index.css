@@ -3,10 +3,12 @@
     background-color: #D1DEDE;
 }
 .img-box{
-    border:solid red 2px;
     display: grid;
     justify-items: center;
     background-color: white;
+    border-radius: 15px;
+    box-shadow: 5px 7px lightgray;
+
 }
 #head-img{
     height: 200px;
@@ -14,7 +16,8 @@
 .title-cont {
     display: grid;
     justify-items: center;
-    padding: 15px; 
+    padding: 15px;
+    margin-top: 12px;
     
 }
 .title {
