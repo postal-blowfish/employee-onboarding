@@ -28,6 +28,7 @@
 
 /* Styling for the main title */
 .title {
+    text-align: center;
     border: solid 2px black;
     border-radius: 15px;
     box-shadow: 5px 5px gray;
@@ -38,6 +39,7 @@
 
 /* Styling for the subtitle */
 .sub-title {
+    text-align: center;
     border: solid 2px black;
     padding: 5px 25px; /* Padding for left and right sides */
     box-shadow: 5px 5px gray;
@@ -55,7 +57,6 @@
     display: flex; /* Use flexbox */
     flex-direction: column; /* Arrange items vertically */
     align-items: center; /* Center items horizontally */
-    border: solid red 2px;
     margin: 7px;
     padding: 5px;
 }
@@ -65,6 +66,7 @@
     background-color: #E29579;
     border: solid 2px black;
     text-align: center;
+    width: 600px;
     border-radius: 15px;
     padding: 0 50px; /* Padding for left and right sides */
     transition: 0.7s; /* Transition duration for hover effect */
@@ -103,4 +105,50 @@
     border-radius: 15px;
     width: 800px;
     box-shadow: 7px 5px gray;
+}
+@media (max-width: 1500px) {
+    .full-box {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+    }
+    .vid-cont:nth-child(odd) .vid-box {
+        width: 700px;
+        margin-left: 0;
+    }
+    
+    .vid-cont:nth-child(even) .vid-box {
+        width: 700px;
+        margin-left: 0;
+    }
+    .vid{
+        width: 700px;
+    }
+}
+@media (max-width: 1080px) {
+    .vid-cont:nth-child(odd) .vid-box {
+        width: 600px;
+        margin-left: 0;
+    }
+    
+    .vid-cont:nth-child(even) .vid-box {
+        width: 600px;
+        margin-left: 0;
+    }
+    .vid{
+        width: 600px;
+    }
+
+}
+@media (max-width: 720px) {
+    .vid-cont:nth-child(odd) .vid-box {
+        width: 500px;
+        margin-left: 0;
+    }
+    
+    .vid-cont:nth-child(even) .vid-box {
+        width: 500px;
+        margin-left: 0;
+    }
+    .vid{
+        width: 500px;
+    }
 }
