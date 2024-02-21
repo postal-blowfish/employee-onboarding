@@ -34,12 +34,35 @@ const videos = [document.querySelector('#vid1'),
     const videoBox = videoBoxes[index];
     const video = videos[index];
   
-    videoBox.style.display = videoBox.style.display === "none" ? "block" : "none";
-    video.style.display = video.style.display === "none" ? "block" : "none";
-  };
-//   creating a function to toggle between displaying and hiding the videos upon click
-  
+    if (videoBox.style.display === "none") {
+        videoBox.style.display = "block";
+        video.style.display = "block";
+        setTimeout(() => {
+          videoBox.style.opacity = "1";
+          video.style.opacity = "1";
+        }, 10); // This small delay ensures the transition works correctly
+      } else {
+        videoBox.style.opacity = "0";
+        video.style.opacity = "0";
+        setTimeout(() => {
+          videoBox.style.display = "none";
+          video.style.display = "none";
+        }, 500); // 500ms = 0.5s
+      }
+    };
   videoTitles.forEach((title, index) => {
     title.addEventListener('click', () => toggleVideo(index));
   });
 //   adding a listener to the video titles in order to call the toggleVideo function upon click
+
+const addTransitionStyles = () => {
+    videoBoxes.forEach((box) => {
+        box.style.transition = "opacity 0.5s ease";
+    });
+    videos.forEach((vid) => {
+        vid.style.transition = "opacity 0.5s ease";
+    });
+};
+// Add transition styles
+  
+  addTransitionStyles();
