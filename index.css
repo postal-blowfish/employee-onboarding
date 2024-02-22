@@ -149,7 +149,7 @@
     display: grid;
     justify-content: center;
     justify-self: center;
-    bordeR: solid black 1px;
+    border: solid black 1px;
     position: relative;
     margin: -10px;
     width: 100%;
@@ -170,7 +170,7 @@
     }
     
     .vid-cont:nth-child(even) .vid-box {
-        width: 700px;
+        width: 700px; /* Adjust width for responsiveness */
         margin-left: 0;
     }
     .vid{
@@ -179,7 +179,7 @@
     .ghl-link {
         position:relative;
         bottom: -65px;
-        right: 300px;
+        right: 300px; /* Adjust position for responsiveness */
     }
 }
 @media (max-width: 1080px) {
@@ -193,7 +193,7 @@
         margin-left: 0;
     }
     .vid{
-        width: 600px;
+        width: 600px; /* Adjust width for responsiveness */
     }
 
 }
@@ -208,6 +208,6 @@
         margin-left: 0;
     }
     .vid{
-        width: 500px;
+        width: 500px;  /* Adjust width for responsiveness */
     }
 }
