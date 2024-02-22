@@ -57,10 +57,10 @@ const videos = [document.querySelector('#vid1'),
 
 const addTransitionStyles = () => {
     videoBoxes.forEach((box) => {
-        box.style.transition = "opacity 0.5s ease";
+        box.style.transition = "opacity 0.8s ease";
     });
     videos.forEach((vid) => {
-        vid.style.transition = "opacity 0.5s ease";
+        vid.style.transition = "opacity 0.8s ease";
     });
 };
 // Add transition styles

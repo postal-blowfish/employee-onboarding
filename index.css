@@ -40,9 +40,11 @@
 /* Styling for the subtitle */
 .sub-title {
     text-align: center;
+    background-color: white;
     border: solid 2px black;
     padding: 5px 25px; /* Padding for left and right sides */
     box-shadow: 5px 5px gray;
+    border-radius: 5px;
 }
 
 .full-box {
@@ -59,6 +61,7 @@
     align-items: center; /* Center items horizontally */
     margin: 7px;
     padding: 5px;
+    position: relative;
 }
 
 /* Styling for the video title */
@@ -67,18 +70,24 @@
     border: solid 2px black;
     text-align: center;
     width: 600px;
-    border-radius: 15px;
-    padding: 0 50px; /* Padding for left and right sides */
-    transition: 0.7s; /* Transition duration for hover effect */
+    border-radius: 5px;
+    padding: 10px 25px; /* Adjusted padding */
     cursor: pointer; /* Change cursor to a pointer on hover */
+    transition: transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
 }
 
 /* Styling for the video title on hover */
 .vid-title:hover {
     background-color: aqua;
     color: blueviolet;
-    border-radius: 0;
+    border-radius: 15px;
+    padding: 10px 50px;
+    transform: translateY(-20px) scale(1.1); /* Move the element up by 10px */
     box-shadow: 5px 5px #E29579;
+ 
+}
+.vid-title + .vid-title {
+    margin-top: 10px; /* Adjust the margin between elements */
 }
 
 /* Styling for the video container */
@@ -106,6 +115,51 @@
     width: 800px;
     box-shadow: 7px 5px gray;
 }
+.ghl-box{
+    display:grid;
+    justify-content: center;
+}
+.ghl-link{
+    background-color: #E29579;
+    border-radius: 5px;
+    border: solid black 2px;
+    font-size: larger;
+    transform: translateY(-80px) translateX(300px);
+    transition: 0.7s;
+}
+.ghl-link:hover{
+    background-color: aqua;
+    transform: translateY(-100px) translateX(320px);
+    box-shadow: 5px 5px #E29579;
+}
+.ghl-text{
+    background-color: #E29579;
+    padding:12px;
+    margin:0px;
+    transition: 0.7s;
+}
+.ghl-text:hover{
+    color: red;
+    background-color: aqua;
+    padding:25px;
+    
+}
+.footer{
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+    bordeR: solid black 1px;
+    position: relative;
+    margin: -10px;
+    width: 100%;
+    bottom: 0;
+    right: -10px;
+}
+.copyright{
+    background-color: white;
+}
+
 @media (max-width: 1500px) {
     .full-box {
         grid-template-columns: 1fr; /* Switch to a single column layout */
