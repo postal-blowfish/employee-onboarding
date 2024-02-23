@@ -73,7 +73,7 @@
     border-radius: 5px;
     padding: 10px 25px; /* Adjusted padding */
     cursor: pointer; /* Change cursor to a pointer on hover */
-    transition: transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
+    transition: border-radius 0.7s, background-color 0.7s, transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
 }
 
 /* Styling for the video title on hover */
@@ -84,6 +84,7 @@
     padding: 10px 50px;
     transform: translateY(-20px) scale(1.1); /* Move the element up by 10px */
     box-shadow: 5px 5px #E29579;
+    
  
 }
 .vid-title + .vid-title {
