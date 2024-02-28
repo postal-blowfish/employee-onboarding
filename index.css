@@ -1,7 +1,7 @@
 /* Reset box-sizing and set background color for the entire document */
 * {
     box-sizing: border-box;
-    background-color: #ADBDFF;
+    background-color: #FFDDD2;
 }
 main{
     height:100%;
@@ -24,8 +24,10 @@ main{
 /* Styling for the container holding the title and subtitle */
 .title-cont {
     display: flex;
+    flex-direction: column;
     flex-shrink: 1;
     justify-items: center; /* Center the title and subtitle horizontally */
+    align-items:center ;
     padding: 15px;
     margin-top: 12px;
 }
@@ -44,6 +46,7 @@ main{
 /* Styling for the subtitle */
 .sub-title {
     text-align: center;
+    max-width: fit-content;
     background-color: white;
     border: solid 2px black;
     padding: 5px 25px; /* Padding for left and right sides */
@@ -59,7 +62,6 @@ main{
     display: grid;
     grid-template-columns: repeat(2, 700px);
     justify-content: center;
-    border: solid blue 2px;
     padding-bottom: 50px;
 }
 
@@ -68,7 +70,6 @@ main{
     position: relative;
     right: 100px;
     width: fit-content;
-    border:solid green 2px;
     display: flex; /* Use flexbox */
     flex-direction: column; /* Arrange items vertically */
     align-items: center;
@@ -81,8 +82,8 @@ main{
     background-color: #E29579;
     border: solid 2px black;
     border-radius: 5px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+   grid-template-columns: 100px 1fr;
     border: solid black 2px;
     max-width: fit-content;
     cursor: pointer; /* Change cursor to a pointer on hover */
@@ -105,10 +106,11 @@ main{
 
 /* Styling for the video title and its container on hover */
 .vid-title-container:hover, .vid-title:hover {
-    background-color: aqua;
-    color: blueviolet;
+    background-color: #21757D;
+    color: #E29579;
+}
+.vid-title:hover{
     text-decoration: underline;
-    
 }
 .vid-title-container:hover {
     box-shadow: 5px 5px #E29579;
@@ -122,6 +124,22 @@ main{
 .vid-title + .vid-title {
     margin-top: 10px; /* Adjust the margin between elements */
 }
+.vid-descript {
+    display:none;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 15px;
+    padding: 5px;
+    grid-column: 2;
+    color:black;
+    font-size: 18px;
+}
+.vid-title-container:hover .vid-descript {
+    display: block;
+
+}
+
+
 
 /* Styling for the video container */
 /* .vid-box {
@@ -146,16 +164,18 @@ main{
     justify-content: center;
 }
 .ghl-link{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    right: 0;
     background-color: #E29579;
     border-radius: 5px;
     border: solid black 2px;
     font-size: larger;
-    transform: translateY(-80px) translateX(300px);
     transition: 0.7s;
 }
 .ghl-link:hover{
     background-color: aqua;
-    transform: translateY(-100px) translateX(320px);
     box-shadow: 5px 5px #E29579;
 }
 .ghl-text{
