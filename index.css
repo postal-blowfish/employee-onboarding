@@ -1,9 +1,12 @@
 /* Reset box-sizing and set background color for the entire document */
 * {
     box-sizing: border-box;
-    background-color: #ADBDFF;
+    background-color: #FFDDD2;
 }
-
+main{
+    height:100%;
+    width:100%;
+}
 /* Styling for the image box */
 .img-box {
     display: grid;
@@ -20,8 +23,11 @@
 
 /* Styling for the container holding the title and subtitle */
 .title-cont {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
     justify-items: center; /* Center the title and subtitle horizontally */
+    align-items:center ;
     padding: 15px;
     margin-top: 12px;
 }
@@ -40,6 +46,7 @@
 /* Styling for the subtitle */
 .sub-title {
     text-align: center;
+    max-width: fit-content;
     background-color: white;
     border: solid 2px black;
     padding: 5px 25px; /* Padding for left and right sides */
@@ -48,89 +55,131 @@
 }
 
 .full-box {
+    height: fit-content;
+    width:99%;
+    position: absolute;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 600px);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 700px);
     justify-content: center;
+    padding-bottom: 50px;
 }
 
 /* Styling for the container holding the video title and video */
 .vid-cont {
+    position: relative;
+    right: 100px;
+    width: fit-content;
     display: flex; /* Use flexbox */
     flex-direction: column; /* Arrange items vertically */
-    align-items: center; /* Center items horizontally */
+    align-items: center;
+    justify-content: space-evenly; /* Center items horizontally */
     margin: 7px;
     padding: 5px;
-    position: relative;
+    /* position: relative; */
 }
-
-/* Styling for the video title */
-.vid-title {
+.vid-title-container {
     background-color: #E29579;
     border: solid 2px black;
-    text-align: center;
-    width: 600px;
     border-radius: 5px;
-    padding: 10px 25px; /* Adjusted padding */
+    display: flex;
+   flex-direction: column;
+    border: solid black 2px;
+    width:600px;
+    min-width: fit-content;
     cursor: pointer; /* Change cursor to a pointer on hover */
     transition: border-radius 0.7s, background-color 0.7s, transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
 }
+.video-icon{
+    max-width: 100px;
+    border-radius: 25px;
+}
 
-/* Styling for the video title on hover */
-.vid-title:hover {
-    background-color: aqua;
-    color: blueviolet;
+/* Styling for the video title */
+.vid-title-container > .vid-title {
+    text-align: center;
+    width: fit-content;
+    border-radius: 15px;
+    padding: 10px 25px; /* Adjusted padding */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+    
+}
+
+/* Styling for the video title and its container on hover */
+.vid-title-container:hover, .vid-title:hover {
+    background-color: #21757D;
+    color: #E29579;
+}
+.vid-title:hover{
+    text-decoration: underline;
+}
+.vid-title-container:hover {
+    box-shadow: 5px 5px #E29579;
+    z-index: 1;
     border-radius: 15px;
     padding: 10px 50px;
     transform: translateY(-20px) scale(1.1); /* Move the element up by 10px */
-    box-shadow: 5px 5px #E29579;
-    
- 
+}
+.vid-title{
+    position: relative;
+    background-color: inherit;
+    width: fit-content;
+    margin-left: 100px;
 }
 .vid-title + .vid-title {
     margin-top: 10px; /* Adjust the margin between elements */
 }
+.img-title{
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+}
+.vid-descript {
+    display:none;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 15px;
+    padding: 5px;
+    grid-column: 2;
+    color:black;
+    font-size: 18px;
+    transition: display 0.8s;
+}
+.vid-title-container:hover .vid-descript {
+    display: block;
 
-/* Styling for the video container */
-.vid-box {
-    width: fit-content;
-    border-radius: 5px;
-    display: none; /* Initially hide the video */
 }
 
-
-/* Align .vid-box to the right for odd .vid-cont elements */
-.vid-cont:nth-child(odd) .vid-box {
-    width: 800px;
-    margin-left: -165px;
-}
-
-.vid-cont:nth-child(even) .vid-box {
-    width: 800px;
-    margin-left: 165px;
-}
 
 .vid {
+    position: relative;
     border: solid #E29579 2px;
     border-radius: 15px;
-    width: 800px;
+    max-width: 700px; /* Set max-width as needed */
+    width: 100%; /* Ensure video fills its container */
     box-shadow: 7px 5px gray;
+    display: none;
+    z-index: 1;
+
 }
+
 .ghl-box{
     display:grid;
     justify-content: center;
 }
 .ghl-link{
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    right: 0;
     background-color: #E29579;
     border-radius: 5px;
     border: solid black 2px;
     font-size: larger;
-    transform: translateY(-80px) translateX(300px);
     transition: 0.7s;
 }
 .ghl-link:hover{
     background-color: aqua;
-    transform: translateY(-100px) translateX(320px);
     box-shadow: 5px 5px #E29579;
 }
 .ghl-text{
@@ -151,7 +200,8 @@
     justify-content: center;
     justify-self: center;
     border: solid black 1px;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     margin: -10px;
     width: 100%;
     bottom: 0;
@@ -161,84 +211,105 @@
     background-color: white;
 }
 @media (max-width : 2000px) {
-    .vid-cont:nth-child(odd) .vid-box {
+    .vid-cont:nth-child(odd) {
         width: 45vw;
-        margin-left: -160px;
+        margin-left: 0px;
+       
     }
-    .vid-cont:nth-child(even) .vid-box {
+    .vid-cont:nth-child(even)  {
         width: 45vw;
-        margin-left: 160px;
+        margin-left: 0;
+        
     }
 }
 
 @media (max-width: 1500px) {
     .full-box {
-        grid-template-columns: 1fr; /* Switch to a single column layout */
+        grid-template-columns: 500px ; /* Switch to a single column layout */
+        height:fit-content;
+        justify-content: center;
     }
     .vid-cont:nth-child(odd) .vid-box {
         width: 700px;
-        margin-left: 0;
+        /* margin-left: 300; */
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 700px; /* Adjust width for responsiveness */
-        margin-left: 0;
+        /* margin-left: 300; */
     }
     .vid{
         width: 700px;
     }
-    .ghl-link {
-        position:relative;
-        bottom: -65px;
-        right: 300px; /* Adjust position for responsiveness */
-    }
+    
 }
 @media (max-width: 1080px) {
     .vid-cont:nth-child(odd) .vid-box {
         width: 600px;
-        margin-left: 0;
+        margin-left: 400;
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 600px;
-        margin-left: 0;
+        margin-left: 400;
     }
     .vid{
         width: 600px; /* Adjust width for responsiveness */
     }
-
+    
+}
+@media (max-width: 900px) {
+    .full-box{
+        justify-content: end;
+    }
+    
 }
 @media (max-width: 720px) {
+    .vid-title-container{
+        width:400px;
+        padding:0;
+        flex-shrink: 1;
+        margin-left: 250px;
+    }
+    
     .vid-cont:nth-child(odd) .vid-box {
-        width: 500px;
-        margin-left: 0;
+        /* width: 500px; */
+        margin-left: 350;
     }
     
     .vid-cont:nth-child(even) .vid-box {
-        width: 500px;
-        margin-left: 0;
+        /* width: 500px; */
+        margin-left: 350;
     }
     .vid{
         width: 500px;  /* Adjust width for responsiveness */
     }
-    .vid-title {
-        width:450px;
+    .vid-title{
+        padding:0;
+        margin-left: 35px;
+        font-size: 16px;
+        object-fit: contain;
     }
+    
 }
 @media (max-width: 500px) {
+    .vid-title-container{
+        margin-left: 520px;
+    }
+    
     .vid-cont:nth-child(odd) .vid-box {
         width: 350px;
-        margin-left: 0;
+        margin-left: 400;
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 350px;
-        margin-left: 0;
+        margin-left: 400;
     }
     .vid{
         width: 350px;  /* Adjust width for responsiveness */
     }
-    .vid-title {
+    /* .vid-title {
         width:350px;
-    }
+    } */
 }
