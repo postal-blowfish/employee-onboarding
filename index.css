@@ -55,7 +55,7 @@ main{
 }
 
 .full-box {
-    height: 100%;
+    height: fit-content;
     width:99%;
     position: absolute;
     margin: 0;
@@ -82,10 +82,11 @@ main{
     background-color: #E29579;
     border: solid 2px black;
     border-radius: 5px;
-    display: grid;
-   grid-template-columns: 100px 1fr;
+    display: flex;
+   flex-direction: column;
     border: solid black 2px;
-    max-width: fit-content;
+    width:600px;
+    min-width: fit-content;
     cursor: pointer; /* Change cursor to a pointer on hover */
     transition: border-radius 0.7s, background-color 0.7s, transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
 }
@@ -97,7 +98,7 @@ main{
 /* Styling for the video title */
 .vid-title-container > .vid-title {
     text-align: center;
-    width: 500px;
+    width: fit-content;
     border-radius: 15px;
     padding: 10px 25px; /* Adjusted padding */
     cursor: pointer; /* Change cursor to a pointer on hover */
@@ -114,15 +115,24 @@ main{
 }
 .vid-title-container:hover {
     box-shadow: 5px 5px #E29579;
+    z-index: 1;
     border-radius: 15px;
     padding: 10px 50px;
     transform: translateY(-20px) scale(1.1); /* Move the element up by 10px */
 }
 .vid-title{
+    position: relative;
     background-color: inherit;
+    width: fit-content;
+    margin-left: 100px;
 }
 .vid-title + .vid-title {
     margin-top: 10px; /* Adjust the margin between elements */
+}
+.img-title{
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
 }
 .vid-descript {
     display:none;
@@ -133,20 +143,13 @@ main{
     grid-column: 2;
     color:black;
     font-size: 18px;
+    transition: display 0.8s;
 }
 .vid-title-container:hover .vid-descript {
     display: block;
 
 }
 
-
-
-/* Styling for the video container */
-/* .vid-box {
-    position:absolute;
-    border: solid red 2px;
-    padding: 10px; /* Add some padding for better visualization */
-/* } */
 
 .vid {
     position: relative;
@@ -156,6 +159,7 @@ main{
     width: 100%; /* Ensure video fills its container */
     box-shadow: 7px 5px gray;
     display: none;
+    z-index: 1;
 
 }
 
@@ -214,80 +218,97 @@ main{
     }
     .vid-cont:nth-child(even)  {
         width: 45vw;
-        margin-left: 120px;
+        margin-left: 0;
         
     }
 }
 
 @media (max-width: 1500px) {
     .full-box {
-        grid-template-columns: 1fr; /* Switch to a single column layout */
-        justify-content:end;
+        grid-template-columns: 500px ; /* Switch to a single column layout */
+        border: solid red 2px;
+        height:fit-content;
+        justify-content: center;
     }
     .vid-cont:nth-child(odd) .vid-box {
         width: 700px;
-        margin-left: 200;
+        /* margin-left: 300; */
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 700px; /* Adjust width for responsiveness */
-        margin-left: 200;
+        /* margin-left: 300; */
     }
     .vid{
         width: 700px;
     }
-    .ghl-link {
-        position:relative;
-        bottom: -65px;
-        right: 300px; /* Adjust position for responsiveness */
-    }
+    
 }
 @media (max-width: 1080px) {
     .vid-cont:nth-child(odd) .vid-box {
         width: 600px;
-        margin-left: 300;
+        margin-left: 400;
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 600px;
-        margin-left: 300;
+        margin-left: 400;
     }
     .vid{
         width: 600px; /* Adjust width for responsiveness */
     }
-
+    
+}
+@media (max-width: 900px) {
+    .full-box{
+        justify-content: end;
+    }
+    
 }
 @media (max-width: 720px) {
+    .vid-title-container{
+        width:400px;
+        padding:0;
+        flex-shrink: 1;
+        margin-left: 250px;
+    }
+    
     .vid-cont:nth-child(odd) .vid-box {
-        width: 500px;
-        margin-right: 350;
+        /* width: 500px; */
+        margin-left: 350;
     }
     
     .vid-cont:nth-child(even) .vid-box {
-        width: 500px;
+        /* width: 500px; */
         margin-left: 350;
     }
     .vid{
         width: 500px;  /* Adjust width for responsiveness */
     }
-    .vid-title {
-        width:450px;
+    .vid-title{
+        padding:0;
+        font-size: 14px;
+        object-fit: contain;
     }
+    
 }
 @media (max-width: 500px) {
+    .vid-title-container{
+        margin-left: 520px;
+    }
     .vid-cont:nth-child(odd) .vid-box {
         width: 350px;
-        margin-right: 0;
+        margin-left: 400;
     }
     
     .vid-cont:nth-child(even) .vid-box {
         width: 350px;
-        margin-left: 0;
+        margin-left: 400;
     }
     .vid{
         width: 350px;  /* Adjust width for responsiveness */
     }
-    .vid-title {
+    /* .vid-title {
         width:350px;
-    }
+    } */
 }
