@@ -226,7 +226,6 @@ main{
 @media (max-width: 1500px) {
     .full-box {
         grid-template-columns: 500px ; /* Switch to a single column layout */
-        border: solid red 2px;
         height:fit-content;
         justify-content: center;
     }
@@ -287,7 +286,8 @@ main{
     }
     .vid-title{
         padding:0;
-        font-size: 14px;
+        margin-left: 35px;
+        font-size: 16px;
         object-fit: contain;
     }
     
@@ -296,6 +296,7 @@ main{
     .vid-title-container{
         margin-left: 520px;
     }
+    
     .vid-cont:nth-child(odd) .vid-box {
         width: 350px;
         margin-left: 400;
