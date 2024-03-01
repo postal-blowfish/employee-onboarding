@@ -315,7 +315,6 @@ main{
         margin-left: 175px;
     }
     .vid-cont{
-        border:solid red 2px;
         margin-left: 140px;
         padding-left: 100px;
     }
@@ -334,11 +333,15 @@ main{
         margin-left: 600;
     }
     .vid{
-        width: 350px;  /* Adjust width for responsiveness */
+        width: 300px;  /* Adjust width for responsiveness */
         margin-left: 320px;
     }
-
-    /* .vid-title {
-        width:350px;
-    } */
+}
+@media (max-width: 350px) {
+    .vid-title-container{
+        margin-left: 760px;
+    }
+    .vid{
+        margin-left: 400px;
+    }
 }
