@@ -210,6 +210,15 @@ main{
 .copyright{
     background-color: white;
 }
+@media(max-width : 1697px) {
+    .vid-title-container {
+        z-index: 1;
+    }
+    .vid{
+        z-index: 2;
+    }
+}
+
 @media (max-width : 2000px) {
     .vid-cont:nth-child(odd) {
         width: 45vw;
