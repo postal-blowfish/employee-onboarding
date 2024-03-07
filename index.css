@@ -1,4 +1,3 @@
-/* Reset box-sizing and set background color for the entire document */
 * {
     box-sizing: border-box;
     background-color: #FFDDD2;
@@ -7,49 +6,44 @@ main{
     height:100%;
     width:100%;
 }
-/* Styling for the image box */
 .img-box {
     display: grid;
-    justify-items: center; /* Center the image horizontally */
+    justify-items: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 5px 7px lightgray;
 }
 
-/* Set the height of the header image */
 #head-img {
     height: 200px;
 }
 
-/* Styling for the container holding the title and subtitle */
 .title-cont {
     display: flex;
     flex-direction: column;
     flex-shrink: 1;
-    justify-items: center; /* Center the title and subtitle horizontally */
+    justify-items: center;
     align-items:center ;
     padding: 15px;
     margin-top: 12px;
 }
 
-/* Styling for the main title */
 .title {
     text-align: center;
     border: solid 2px black;
     border-radius: 15px;
     box-shadow: 5px 5px gray;
-    padding: 5px 50px; /* Padding for left and right sides */
+    padding: 5px 50px;
     color: #E29579;
     background-color: black;
 }
 
-/* Styling for the subtitle */
 .sub-title {
     text-align: center;
     max-width: fit-content;
     background-color: white;
     border: solid 2px black;
-    padding: 5px 25px; /* Padding for left and right sides */
+    padding: 5px 25px;
     box-shadow: 5px 5px gray;
     border-radius: 5px;
 }
@@ -60,82 +54,71 @@ main{
     position: absolute;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(2, 700px);
+    grid-template-columns: 1;
     justify-content: center;
     padding-bottom: 50px;
 }
 
-/* Styling for the container holding the video title and video */
 .vid-cont {
     position: relative;
     right: 100px;
     width: fit-content;
-    display: flex; /* Use flexbox */
-    flex-direction: column; /* Arrange items vertically */
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; /* Center items horizontally */
+    justify-content: space-evenly;
     margin: 7px;
     padding: 5px;
-    /* position: relative; */
 }
+
 .vid-title-container {
     background-color: #E29579;
     border: solid 2px black;
     border-radius: 5px;
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
     border: solid black 2px;
     width:600px;
     min-width: fit-content;
-    cursor: pointer; /* Change cursor to a pointer on hover */
-    transition: border-radius 0.7s, background-color 0.7s, transform 0.7s, padding 0.7s, border-radius 0.7s; /* Transition for padding and border-radius */
+    cursor: pointer;
 }
+
 .video-icon{
     max-width: 100px;
     border-radius: 25px;
 }
 
-/* Styling for the video title */
 .vid-title-container > .vid-title {
+    background-color: #E29579;
     text-align: center;
     width: fit-content;
     border-radius: 15px;
-    padding: 10px 25px; /* Adjusted padding */
-    cursor: pointer; /* Change cursor to a pointer on hover */
-    
+    padding: 10px 25px;
+    cursor: pointer;
 }
 
-/* Styling for the video title and its container on hover */
-.vid-title-container:hover, .vid-title:hover {
-    background-color: #21757D;
-    color: #E29579;
-}
-.vid-title:hover{
-    text-decoration: underline;
-}
-.vid-title-container:hover {
-    box-shadow: 5px 5px #E29579;
-    z-index: 1;
-    border-radius: 15px;
-    padding: 10px 50px;
-    transform: translateY(-20px) scale(1.1); /* Move the element up by 10px */
-}
 .vid-title{
     position: relative;
-    background-color: inherit;
+    background-color: #E29579;
+    padding:5px;
     width: fit-content;
-    margin-left: 100px;
 }
+
 .vid-title + .vid-title {
-    margin-top: 10px; /* Adjust the margin between elements */
+    margin-top: 10px;
+    background-color: #E29579;
 }
+
 .img-title{
-    background-color: inherit;
+    background-color: #E29579;
     display: flex;
     flex-direction: row;
+    margin: 5px;
 }
+
 .vid-descript {
-    display:none;
+    display:block;
     background-color: white;
     border: solid black 1px;
     border-radius: 15px;
@@ -145,28 +128,22 @@ main{
     font-size: 18px;
     transition: display 0.8s;
 }
-.vid-title-container:hover .vid-descript {
-    display: block;
-
-}
-
 
 .vid {
     position: relative;
     border: solid #E29579 2px;
     border-radius: 15px;
-    max-width: 700px; /* Set max-width as needed */
-    width: 100%; /* Ensure video fills its container */
+    max-width: 1000px;
+    width: 100%;
     box-shadow: 7px 5px gray;
-    display: none;
     z-index: 1;
-
 }
 
 .ghl-box{
     display:grid;
     justify-content: center;
 }
+
 .ghl-link{
     position: fixed;
     bottom: 0;
@@ -178,22 +155,14 @@ main{
     font-size: larger;
     transition: 0.7s;
 }
-.ghl-link:hover{
-    background-color: aqua;
-    box-shadow: 5px 5px #E29579;
-}
+
 .ghl-text{
     background-color: #E29579;
     padding:12px;
     margin:0px;
     transition: 0.7s;
 }
-.ghl-text:hover{
-    color: red;
-    background-color: aqua;
-    padding:25px;
-    
-}
+
 .footer{
     background-color: white;
     display: grid;
@@ -207,6 +176,7 @@ main{
     bottom: 0;
     right: -10px;
 }
+
 .copyright{
     background-color: white;
 }
